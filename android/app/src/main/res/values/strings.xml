@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">الزوز</string>
+    <string name="title_activity_main">عالم الزوز</string>
+    <string name="package_name">com.elzozzz.app</string>
+    <string name="custom_url_scheme">com.elzozzz.app</string>
+</resources>

@@ -1,0 +1,69 @@
+generator client {
+  provider        = "prisma-client-js"
+  output          = "../lib/generated/client"
+  previewFeatures = ["driverAdapters"]
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model GameScore {
+  id         String   @id @default(cuid())
+  playerName String   @default("الزوز العالمي ⚽")
+  gameType   String   // PENALTY, CAR_CRASH, DJ_BEAT, SMASH
+  score      Int      @default(0)
+  stars      Int      @default(3)
+  level      Int      @default(1)
+  details    String?  @default("")
+  createdAt  DateTime @default(now())
+}
+
+model GoalRecord {
+  id          String   @id @default(cuid())
+  strikerName String   @default("الكابتن زين (الزوز) ⚽")
+  goalType    String   @default("صاروخ في المقص 🚀")
+  speedKmh    Int      @default(120)
+  stadium     String   @default("استاد الزوز الدولي 🏟️")
+  createdAt   DateTime @default(now())
+}
+
+model MonsterTruck {
+  id         String   @id @default(cuid())
+  name       String
+  smashPower Int      @default(100)
+  speed      Int      @default(150)
+  armor      Int      @default(90)
+  isUnlocked Boolean  @default(true)
+  icon       String
+  style      String   @default("monster")
+}
+
+model SecretClubTrophy {
+  id          String   @id @default(cuid())
+  trophyCode  String   @unique
+  title       String
+  description String
+  icon        String
+  isUnlocked  Boolean  @default(true)
+  unlockedAt  DateTime?
+}
+
+model VoiceChant {
+  id        String   @id @default(cuid())
+  title     String
+  chantAr   String
+  chantEn   String
+  soundType String   @default("cheer")
+  createdAt DateTime @default(now())
+}
+
+model Settings {
+  id            String   @id @default("default")
+  heroName      String   @default("الزوز (زين)")
+  heroAge       Int      @default(8)
+  pinCode       String   @default("zoz")
+  favoriteSport String   @default("كرة القدم والسباقات")
+  soundEnabled  Boolean  @default(true)
+  updatedAt     DateTime @updatedAt
+}

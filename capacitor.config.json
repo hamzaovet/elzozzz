@@ -1,0 +1,13 @@
+{
+  "appId": "com.elzozzz.app",
+  "appName": "الزوز",
+  "webDir": "public",
+  "server": {
+    "url": "https://elzozzz.vercel.app",
+    "cleartext": true
+  },
+  "android": {
+    "allowMixedContent": true,
+    "backgroundColor": "#020617"
+  }
+}
